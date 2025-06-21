@@ -229,6 +229,9 @@ class Trossen:
 
         self.itemWrite(DXL_ID.END_EFFECTOR(), DXL_CONSTANTS.ADDR_GOAL_POSITION, mapped_pos, DXL_CONSTANTS.LEN_GOAL_POSITION)
 
+    def set_joint_position(self, joint_id, position):
+        self.itemWrite(joint_id, DXL_CONSTANTS.ADDR_GOAL_POSITION, position, DXL_CONSTANTS.LEN_GOAL_POSITION)
+
     def close(self):
         self.torqueEnable()
         self.portHandler.closePort()
